@@ -9,6 +9,7 @@ import java.lang.ref.WeakReference;
 public abstract class BasePresenter<M extends BaseModel, V extends BaseView, CONTRACT> {
 
     public M m;
+    // 绑定View层弱引用
     private WeakReference<V> vWeakReference;
 
     public BasePresenter() {
@@ -36,5 +37,6 @@ public abstract class BasePresenter<M extends BaseModel, V extends BaseView, CON
 
     public abstract M getModel();
 
+    // 获取子类具体契约（Model层和View层协商的共同业务）
     public abstract CONTRACT getContract();
 }
